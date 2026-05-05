@@ -25,5 +25,85 @@ Description: This is a patient registration form to collect information such as 
     </div>
     <div id="mainheader">
       <h2>PATIENT REGISTRATION FORM</h2>
-      
+      <table width="100%">
+        <td valign="bottom" align="right">Today's date is: <span id="today"> Date goes here </span>
   </td>
+      </table>
+    </div>
+    <hr>
+    <div id="header">
+      <form action="mis3371hw4-final.html">
+        <table class="registration">
+          <tr class="registration">
+            <th class="registration" colspan="3">New Patient Registration</th>
+          </tr>
+          <tr class="registration"></tr>
+          <td align="left"></td>
+        </table>
+    </div>
+    <!-- Body Elements -->
+    <body onload="initialstart()">
+      <table>
+        <span>
+          <ul>
+            <div id="name">
+              <td align="left">
+                <tr class="registration">
+                  <li><label for="firstname">First Name: </label></li>
+                  <input type="text" size="30"
+                    minlength="1" maxlength="30"
+                    pattern="[A-Za-z-']{2,}"
+                    id="firstname"
+                    name="firstname"
+                    placeholder="First Name"
+                    onblur="validatefirstname()"
+                    oninput="validatefirstname()"
+                    required>
+                  <li><label for="middleinitial">Middle Initial: </label></li>
+                  <input type="text" class="middlesize" size="30"
+                    minlength="1" maxlength="1"
+                    pattern="[A-Za-z-']{2,}"
+                    id="middleinitial"
+                    name="middleinitial"
+                    placeholder="MI">
+                  <li><label for="lastname">Last Name: </label></li>
+                  <input type="text" size="30"
+                    minlength="1" maxlength="30"
+                    patter="[A-Za-z-']{2,}"
+                    id="lastname"
+                    name="lastname"
+                    placeholder="Last Name"
+                    onblur="validatelastname()"
+                    oninput="validatelastname()"
+                    required>
+          </ul>
+        </span>
+      </table>
+      <span id="gov_name"></span>
+      <tr class="registration">
+        <div id="dob">
+          <td><label for="birthdate">Date of Birth: </label></td>
+          <input type="date" id="birthdate" name="birthdate"
+            title="Please select the day you were born"
+            min="1906-05-5" max="2026-05-4" required>
+            <span id="dob_check"></span>
+        </div>
+      </tr>
+      <tr class="registration">
+        <div id="ssn">
+          <td><label for="ssn">SSN: </label></td>
+          <td>
+            <input type="password" id="ssn" name="ssn" pattern="\d{3}-\d{2}-\d{4}"
+              value="FakePSW" minlength="9" maxlength="11" oninput="validatessn()"
+              title="Enter your SSN" placeholder="Social Security Number" required>
+            <span id="ssn_check"></span>
+          </td>
+        </div>
+      </tr>
+      <tr class="registration">
+        <td align="right">
+          <label for="address1">Adress: </label>
+        </td>
+        <td>
+          <input type="text"
+        </td>
