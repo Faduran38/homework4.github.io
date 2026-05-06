@@ -103,7 +103,13 @@ function validateaddress() { //Validates the address to fit the requirements
 }
 async function searchZip(zip) {
   if (zip.length !== 5) return;
-  fetch(
+  fetch('https://api.zipgrabtm.gr/us/${zip}');
+  if (res.ok) {
+    const data = await res.json();
+    document.getElementById("city").value = data.places[0]["place name"];
+    document.getElementById("state").value = data.places[0]["state abbreviation"];
+  }
+}
 function validatephone() { //Validates phone number to fit requirements 
   let x = document.getElementById("phone").value;
   if(x.length < 9) {
