@@ -10,6 +10,38 @@ function initialstart() { //This is initiating all of the variables that are ref
   console.log(errorcaught);
   checkdata();
 }
+function setCookie(cookiename, cookievalue, expiration) {
+  const x = new Date();
+  x.setTime(x.getTime() + (expiration*24*60*60*1000));
+  let expires = "expires=" + x.toUTCString();
+  document.cookie = cookiename + "=" + cookievalue + ";" + expires + ";path=/";
+}
+function getCookie(cookiename) {
+  let name = cookiename + "=";
+  let decodedCookie = decodeURIComponent(document.cookie);
+  let xd = decodedCookie.split(';');
+  for( let i = 0; i < xd.length; i++) {
+    let y = xd[i];
+    while (y.charAt(0) == ' ') {
+      y = y.substring(1);
+    }
+    if (y.indexOf(name) == 0) {
+      return.y.substring(name.length, y.length);
+    }
+  }
+  return "";
+}
+function validateCookie() {
+  let username = getCookie("username");
+  if (username != "") {
+    alert("Welcome back " + username);}
+  else {
+    username = prompt("Please enter your first name:" , "");
+    if(username != "" && username != null) {
+      setCookie("username", username, 365);
+    }
+  }
+}
 function validatessn() { //Validates the ssn input, if it doesn't fit requirements, it returns a message 
   let x =
     document.getElementById("ssn").value;
