@@ -101,6 +101,9 @@ function validateaddress() { //Validates the address to fit the requirements
       document.getElementById("address_check").innerHTML = "";}
   }
 }
+async function searchZip(zip) {
+  if (zip.length !== 5) return;
+  fetch(
 function validatephone() { //Validates phone number to fit requirements 
   let x = document.getElementById("phone").value;
   if(x.length < 9) {
