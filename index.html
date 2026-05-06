@@ -177,7 +177,7 @@ Description: This is a patient registration form to collect information such as 
         </select>
         <label for="zip">Zipcode: </label>
         <input type="text" pattern="[0-9]{5}" name="zip" placeholder="Zipcode"
-          minlength="5" maxlength="5" required>
+          minlength="5" maxlength="5" onblur="searchZip(this.value)" value= "" required>
       </tr>
       <tr class="registration">
         <div id="gender">
