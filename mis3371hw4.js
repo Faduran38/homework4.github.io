@@ -43,7 +43,16 @@ function validateCookie() {
   }
 }
 function obtainDraft() {
-  const sheet = document.getElementById("
+  const sheet = document.getElementById("signupregistration");
+  if(!form) return;
+  const data = {};
+  form.querySelectorAll('input, select, textarea').forEach(i => {
+    if(i.type === "password" || i.type === "hidden") 
+      return;
+    if(i.type === "checkbox") data[i.name] = i.checked;
+    else if(i.type === "radio") {if(i.checked) data[i.name] = i.value; }
+    else data[i.name] = i.value; });
+                                               
 function validatessn() { //Validates the ssn input, if it doesn't fit requirements, it returns a message 
   let x =
     document.getElementById("ssn").value;
