@@ -42,6 +42,7 @@ function validateCookie() {
     }
   }
 }
+function obtainDraft() {
 function validatessn() { //Validates the ssn input, if it doesn't fit requirements, it returns a message 
   let x =
     document.getElementById("ssn").value;
