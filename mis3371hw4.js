@@ -117,7 +117,7 @@ function validatefirstname() { //Validates the first name
     errorflag.innerHTML = "Please add more characters.";
     errorcaught = 1;}
   else {
-    if(x.match(/[A-Za-z-']+$/)){
+    if(x.match(/^[A-Za-z-']+$/)){
       errorflag.innerHTML = "";}
     else {
       errorflag.innerHTML = "Invalid characters.";
