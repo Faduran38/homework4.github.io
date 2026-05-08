@@ -6,7 +6,7 @@ Date Last Edited: May 8, 2026
 Version: 1.0
 Description: This is a style sheet to make the patient regeistration form more appealing to the ey
 */
-.center {
+.headerone {
   position: sticky;
   top: 0;
   padding: 10px 15px;
