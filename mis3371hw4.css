@@ -18,7 +18,6 @@ Description: This is a style sheet to make the patient regeistration form more a
 }
 .headername {
   position: absolute;
-  margin: auto;
   font-size: 1.5rem;
   align-self: center;
 }
