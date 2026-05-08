@@ -126,12 +126,16 @@ function validatefirstname() { //Validates the first name
 }
 function validatelastname() { //Validates the last name entered 
   let x = document.getElementById("lastname").value;
+  let errorflag = document.getElementById("gov_name");
   if(x.length < 2) {
-    document.getElementById("gov_name").innerHTML = "Please add more characters.";
+    errorflag.innerHTML = "Please add more characters.";
     errorcaught = 1; }
   else {
-    if(x.match(/[A-Za-z-']+$/)) {
-      document.getElementById("gov_name").innerHTML = '';}
+    if(x.match(/^[A-Za-z-']+$/)) {
+      errorflag.innerHTML = '';}
+    else {
+      errorflag.innerHTML + "Invalid characters.";
+      errorcaught = 1;}
   }
 }
 const inputDate = new Date("1906-05-4"); //This makes sure that if the date input is greater than 120 years, there will be an error 
@@ -143,22 +147,24 @@ else {
 }
 function validateemail() { //Validates the email to fit the requirements 
   let x = document.getElementById("email").value;
+  let errorflag = document.getElementById("email_check");
   if(x.length < 5) {
-    document.getElementById("email_check").innerHTML = "Invalid email length.";
+    errorflag.innerHTML = "Invalid email length.";
     errorcaught = 1; }
   else {
     if(x.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
-      document.getElementById("email_check").innerHTML = '';}
+      errorflag.innerHTML = '';}
   }
 }
 function validateaddress() { //Validates the address to fit the requirements 
   let x = document.getElementById("address1").value;
+  let errorflag = document.getElementById("address_check");
   if(x.length < 2) {
-    document.getElementById("address_check").innerHTML = "Invalid address length.";
+    errorflag.innerHTML = "Invalid address length.";
     errorcaught = 1;}
   else {
     if(x.length > 2) {
-      document.getElementById("address_check").innerHTML = "";}
+      errorflag.innerHTML = "";}
   }
 }
 async function searchZip(zip) {
@@ -172,11 +178,12 @@ async function searchZip(zip) {
 }
 function validatephone() { //Validates phone number to fit requirements 
   let x = document.getElementById("phone").value;
+  let errorflag = document.getElementById("phone_check");
   if(x.length < 9) {
-    document.getElementById("phone_check").innerHTML = "Invalid length.";
+    errorflag.innerHTML = "Invalid length.";
     errorcaught = 1; }
   else { 
-  document.getElementById("phone_check").innerHTML = "";
+  errorflag.innerHTML = "";
   }
 }
 functio checkpasswords() { //This makes sure that both of the passwords match 
