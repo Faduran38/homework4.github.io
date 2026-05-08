@@ -12,6 +12,7 @@ Description: This is a style sheet to make the patient regeistration form more a
   top: 0;
   padding: 10px 15px;
   z-index: 1000;
+  align-items: center;
 }
 .headerpic {
   line-height:1;
@@ -19,6 +20,7 @@ Description: This is a style sheet to make the patient regeistration form more a
 .headername {
   position: absolute;
   font-weight: 800;
+  left: 50%;
 }
 body {
   background-color: #92a8d1;
