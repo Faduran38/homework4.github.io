@@ -10,13 +10,13 @@ function initialstart() { //This is initiating all of the variables that are ref
   console.log(errorcaught);
   checkdata();
 }
-function setCookie(cookiename, cookievalue, expiration) {
+function setCookie(cookiename, cookievalue, expiration) { //Setting cookie
   const x = new Date();
   x.setTime(x.getTime() + (expiration*24*60*60*1000));
   let expires = "expires=" + x.toUTCString();
   document.cookie = cookiename + "=" + cookievalue + ";" + expires + ";path=/";
 }
-function getCookie(cookiename) {
+function getCookie(cookiename) { //Grabbing cookie
   let name = cookiename + "=";
   let decodedCookie = decodeURIComponent(document.cookie);
   let xd = decodedCookie.split(';');
@@ -31,7 +31,7 @@ function getCookie(cookiename) {
   }
   return "";
 }
-function validateCookie() {
+function validateCookie() { //Validating cookie
   let username = getCookie("username");
   if (username != "") {
     alert("Welcome back " + username);}
@@ -42,7 +42,7 @@ function validateCookie() {
     }
   }
 }
-function obtainDraft() {
+function obtainDraft() { //Grabbing any draft that was previously started 
   const sheet = document.getElementById("signupregistration");
   if(!form) return;
   const data = {};
@@ -53,7 +53,7 @@ function obtainDraft() {
     else if(i.type === "radio") {if(i.checked) data[i.name] = i.value; }
     else data[i.name] = i.value; });
   localStorage.setItem('draft', JSON.stringify(data));}
-function loadDraft() {
+function loadDraft() { //Loading information of the draft 
   const data = JSON.parse(localStorage.getItem('draft'));
   const form = document.getElementById("signupregistration")) {
     const data = JSON.parse(draft);
@@ -62,7 +62,7 @@ function loadDraft() {
     document.getElementById('draft').style.display = "block";
   }
 }
-function wipeDraft() {
+function wipeDraft() { //Clearing the draft if user wants to start over 
   localStorage.removeItem('draft');
   document.getElementById("draftsheet").style.display = 'none';}
                                                
