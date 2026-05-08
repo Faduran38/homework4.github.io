@@ -112,12 +112,16 @@ if(e.taget.value.length === 7) {
 }
 function validatefirstname() { //Validates the first name 
   let x = document.getElementById("firstname").value;
+  let errorflag = document.getElementById("gov_name");
   if(x.length < 2) {
-    document.getElementById("gov_name").innerHTML = "Please add more characters.";
+    errorflag.innerHTML = "Please add more characters.";
     errorcaught = 1;}
   else {
     if(x.match(/[A-Za-z-']+$/)){
-      document.getElementById("gov_name").innerHTML = "";}
+      errorflag.innerHTML = "";}
+    else {
+      errorflag.innerHTML = "Invalid characters.";
+      errorcaught = 1;}
   }
 }
 function validatelastname() { //Validates the last name entered 
