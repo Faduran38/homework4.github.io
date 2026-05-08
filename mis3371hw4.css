@@ -8,8 +8,8 @@ Description: This is a style sheet to make the patient regeistration form more a
 */
 .center {
   position: sticky;
-  top: 0
-    padding: 10px 15px;
+  top: 0;
+  padding: 10px 15px;
 }
 body {
   background-color: #92a8d1;
