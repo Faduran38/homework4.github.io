@@ -19,7 +19,7 @@ Description: This is a style sheet to make the patient regeistration form more a
 }
 .headername {
   position: absolute;
-  left: 50%;
+  left: 40%;
   margin: auto;
   font-size: 1.5rem;
   align-self: center;
